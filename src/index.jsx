@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom'
 
 // Importar el componente 
 
+import App from './App'
+
 // Utilizar el componente
 
-ReactDOM.render(<h1>Hola React Hola</h1>, 
+ReactDOM.render(<App />, 
     document.getElementById('root'));
