@@ -1,19 +1,26 @@
 // Importacion
 
 import React from 'react'
+import Result from './components/Result'
+import Button from './components/Button'
 import './App.css'
+
 
 // Generacion de la funcion flecha o Arrow function del componente
 
 const App = () => {
+
+    const clickHandlerFunction = text => {
+        console.log("Button.clickHandler", text)
+    }
+    
     // Lo que ejecuta la funcion
     console.log("Renderizacion de App")
     return (
     <main className='react-calculator'>
-        <div className="result">
-        </div>
+        <Result value={undefined} />
         <div className="numbers">
-            <button>1</button>
+            <Button text="1" clickHandler={clickHandlerFunction}/>
             <button>2</button>
             <button>3</button>
             <button>4</button>
