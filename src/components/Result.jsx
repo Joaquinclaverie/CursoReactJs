@@ -12,7 +12,7 @@ Result.propTypes = {
 }
 
 Result.defaultProps = {
-    value: "0",
+    value: "",
 }
 
 export default Result
