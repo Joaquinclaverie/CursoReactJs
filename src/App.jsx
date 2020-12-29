@@ -1,6 +1,7 @@
 // Importacion
 /* eslint no-eval: 0 */
 import React, { useState } from 'react'
+import words from 'lodash.words'
 import Functions from './components/Functions'
 import Numbers from './components/Numbers'
 import MathOperations from './components/MathOperations'
@@ -18,12 +19,16 @@ const App = () => {
     // 
     const [stack, setStack] = useState("")
 
-    // arrayTextoFuncionModificaTexto => ["hola", funcion]
-    // Lo que ejecuta la funcion
-    console.log("Renderizacion de App")
+    const items = words(stack, /[^-^+^*^/]+/g)
+
+    // Es similar a un IF. (esVerdadero) ? (resultadoPorVerdadero) : (resultadoPorFalso)
+    const value = items.length > 0 ? items[items.length-1] : "0";
+
+    console.log("Renderizacion de App", value)
+
     return (
     <main className='react-calculator'>
-        <Result value={stack} />
+        <Result value={value} />
         <Numbers onClickNumber={number => {
             console.log("Click en number", number)
             setStack(`${stack}${number}`)
